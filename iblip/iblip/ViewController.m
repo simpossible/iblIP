@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getAllIPAddresses];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -33,8 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSMutableDictionary *)getAllIPAddresses {
-    NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
+- (void)getAllIPAddresses {
     
 
     
@@ -78,7 +78,6 @@
         // Free memory
         freeifaddrs(interfaces);
     }
-    return addresses;
 }
 
 - (NSString *)getMacAddressWithBasName:(NSString *)badName {
